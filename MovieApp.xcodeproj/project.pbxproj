@@ -12,6 +12,8 @@
 		DECD3DAB25383DC3004B7A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECD3DAA25383DC3004B7A45 /* Assets.xcassets */; };
 		DECD3DAE25383DC3004B7A45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DECD3DAC25383DC3004B7A45 /* LaunchScreen.storyboard */; };
 		DECD3DBA25383FC0004B7A45 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DB925383FC0004B7A45 /* RootViewController.swift */; };
+		DECD3DC02538448A004B7A45 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DBF2538448A004B7A45 /* DiscoverViewController.swift */; };
+		DECD3DC2253844B1004B7A45 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DC1253844B1004B7A45 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		DECD3DAD25383DC3004B7A45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DECD3DAF25383DC3004B7A45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DECD3DB925383FC0004B7A45 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DECD3DBF2538448A004B7A45 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		DECD3DC1253844B1004B7A45 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +95,43 @@
 		DECD3DB825383E8D004B7A45 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				DECD3DB925383FC0004B7A45 /* RootViewController.swift */,
+				DECD3DBE2538445F004B7A45 /* Root */,
+				DECD3DBB2538442F004B7A45 /* Discover */,
+				DECD3DBC25384435004B7A45 /* Search */,
+				DECD3DBD25384443004B7A45 /* MovieCell */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		DECD3DBB2538442F004B7A45 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DBF2538448A004B7A45 /* DiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		DECD3DBC25384435004B7A45 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DC1253844B1004B7A45 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DECD3DBD25384443004B7A45 /* MovieCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieCell;
+			sourceTree = "<group>";
+		};
+		DECD3DBE2538445F004B7A45 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DB925383FC0004B7A45 /* RootViewController.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECD3DC2253844B1004B7A45 /* SearchViewController.swift in Sources */,
 				DECD3DA225383DC1004B7A45 /* AppDelegate.swift in Sources */,
+				DECD3DC02538448A004B7A45 /* DiscoverViewController.swift in Sources */,
 				DECD3DBA25383FC0004B7A45 /* RootViewController.swift in Sources */,
 				DECD3DA425383DC1004B7A45 /* SceneDelegate.swift in Sources */,
 			);

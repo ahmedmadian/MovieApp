@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  SearchViewController.swift
 //  MovieApp
 //
 //  Created by Ahmed Madian on 10/15/20.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class RootViewController: UITabBarController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        viewControllers = [ViewController(), ViewController()]
-
+        self.view.backgroundColor = .blue
     }
 
 }

@@ -14,6 +14,31 @@
 		DECD3DBA25383FC0004B7A45 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DB925383FC0004B7A45 /* RootViewController.swift */; };
 		DECD3DC02538448A004B7A45 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DBF2538448A004B7A45 /* DiscoverViewController.swift */; };
 		DECD3DC2253844B1004B7A45 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DC1253844B1004B7A45 /* SearchViewController.swift */; };
+		DECD3DC525384D86004B7A45 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DC425384D86004B7A45 /* Movie.swift */; };
+		DECD3DC825384E8E004B7A45 /* Autolayout + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DC725384E8E004B7A45 /* Autolayout + Extensions.swift */; };
+		DECD3DCD25384F06004B7A45 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DCC25384F06004B7A45 /* Viewable.swift */; };
+		DECD3DCF25384F2E004B7A45 /* Interactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DCE25384F2E004B7A45 /* Interactable.swift */; };
+		DECD3DD125384F49004B7A45 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DD025384F49004B7A45 /* Presentable.swift */; };
+		DECD3DD325384F62004B7A45 /* Wireframeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DD225384F62004B7A45 /* Wireframeable.swift */; };
+		DECD3DD525384F8B004B7A45 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DD425384F8B004B7A45 /* BaseWireframe.swift */; };
+		DECD3DDA25385031004B7A45 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DD925385031004B7A45 /* BaseViewController.swift */; };
+		DECD3DE0253850B8004B7A45 /* DiscoverPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DDF253850B8004B7A45 /* DiscoverPresenter.swift */; };
+		DECD3DE2253850DB004B7A45 /* DiscoverInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DE1253850DB004B7A45 /* DiscoverInteractor.swift */; };
+		DECD3DE4253850F0004B7A45 /* DiscoverWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DE3253850F0004B7A45 /* DiscoverWireframe.swift */; };
+		DECD3DE725385126004B7A45 /* DiscoverVIPERContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DE625385126004B7A45 /* DiscoverVIPERContract.swift */; };
+		DECD3DE925385289004B7A45 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DE825385289004B7A45 /* MovieCell.swift */; };
+		DECD3DEB253852F5004B7A45 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DEA253852F5004B7A45 /* CardView.swift */; };
+		DECD3DF325386692004B7A45 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DF225386692004B7A45 /* EndPointType.swift */; };
+		DECD3DF725386705004B7A45 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DF625386705004B7A45 /* HTTPMethod.swift */; };
+		DECD3DF92538674F004B7A45 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DF82538674F004B7A45 /* HTTPTask.swift */; };
+		DECD3DFC25386819004B7A45 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DFB25386819004B7A45 /* ParameterEncoding.swift */; };
+		DECD3DFE253868DA004B7A45 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DFD253868DA004B7A45 /* URLParameterEncoding.swift */; };
+		DECD3E002538690B004B7A45 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DFF2538690B004B7A45 /* JSONParameterEncoding.swift */; };
+		DECD3E0425386C4E004B7A45 /* TMDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E0325386C4E004B7A45 /* TMDBClient.swift */; };
+		DECD3E0C253870B7004B7A45 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E0B253870B7004B7A45 /* MoviesService.swift */; };
+		DECD3E112538815A004B7A45 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E102538815A004B7A45 /* BaseService.swift */; };
+		DECD3E1325388443004B7A45 /* BaseServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E1225388443004B7A45 /* BaseServiceError.swift */; };
+		DECD3E16253887F5004B7A45 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E15253887F5004B7A45 /* Enviroment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +51,31 @@
 		DECD3DB925383FC0004B7A45 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		DECD3DBF2538448A004B7A45 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		DECD3DC1253844B1004B7A45 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DECD3DC425384D86004B7A45 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		DECD3DC725384E8E004B7A45 /* Autolayout + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Autolayout + Extensions.swift"; sourceTree = "<group>"; };
+		DECD3DCC25384F06004B7A45 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
+		DECD3DCE25384F2E004B7A45 /* Interactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactable.swift; sourceTree = "<group>"; };
+		DECD3DD025384F49004B7A45 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		DECD3DD225384F62004B7A45 /* Wireframeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframeable.swift; sourceTree = "<group>"; };
+		DECD3DD425384F8B004B7A45 /* BaseWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		DECD3DD925385031004B7A45 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DECD3DDF253850B8004B7A45 /* DiscoverPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPresenter.swift; sourceTree = "<group>"; };
+		DECD3DE1253850DB004B7A45 /* DiscoverInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverInteractor.swift; sourceTree = "<group>"; };
+		DECD3DE3253850F0004B7A45 /* DiscoverWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverWireframe.swift; sourceTree = "<group>"; };
+		DECD3DE625385126004B7A45 /* DiscoverVIPERContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVIPERContract.swift; sourceTree = "<group>"; };
+		DECD3DE825385289004B7A45 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		DECD3DEA253852F5004B7A45 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DECD3DF225386692004B7A45 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		DECD3DF625386705004B7A45 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		DECD3DF82538674F004B7A45 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		DECD3DFB25386819004B7A45 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		DECD3DFD253868DA004B7A45 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
+		DECD3DFF2538690B004B7A45 /* JSONParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoding.swift; sourceTree = "<group>"; };
+		DECD3E0325386C4E004B7A45 /* TMDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBClient.swift; sourceTree = "<group>"; };
+		DECD3E0B253870B7004B7A45 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
+		DECD3E102538815A004B7A45 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		DECD3E1225388443004B7A45 /* BaseServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceError.swift; sourceTree = "<group>"; };
+		DECD3E15253887F5004B7A45 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +108,11 @@
 		DECD3DA025383DC1004B7A45 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				DECD3E14253887E0004B7A45 /* Configuration */,
+				DECD3DF12538666C004B7A45 /* Network Layer */,
+				DECD3DEC253862BA004B7A45 /* Data Manager */,
+				DECD3DC625384E5A004B7A45 /* Library */,
+				DECD3DC325384D76004B7A45 /* Entities */,
 				DECD3DB525383DCF004B7A45 /* Application */,
 				DECD3DB825383E8D004B7A45 /* Modules */,
 				DECD3DB725383E5D004B7A45 /* Resources */,
@@ -106,7 +161,11 @@
 		DECD3DBB2538442F004B7A45 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				DECD3DBF2538448A004B7A45 /* DiscoverViewController.swift */,
+				DECD3DE625385126004B7A45 /* DiscoverVIPERContract.swift */,
+				DECD3DDB2538506A004B7A45 /* View */,
+				DECD3DDD25385076004B7A45 /* Presenter */,
+				DECD3DDC2538506E004B7A45 /* Interactor */,
+				DECD3DDE2538507B004B7A45 /* Wireframe */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -122,6 +181,7 @@
 		DECD3DBD25384443004B7A45 /* MovieCell */ = {
 			isa = PBXGroup;
 			children = (
+				DECD3DE825385289004B7A45 /* MovieCell.swift */,
 			);
 			path = MovieCell;
 			sourceTree = "<group>";
@@ -132,6 +192,165 @@
 				DECD3DB925383FC0004B7A45 /* RootViewController.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		DECD3DC325384D76004B7A45 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DC425384D86004B7A45 /* Movie.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		DECD3DC625384E5A004B7A45 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DD825385026004B7A45 /* Views */,
+				DECD3DCB25384EC2004B7A45 /* Base VIPER */,
+				DECD3DD725385003004B7A45 /* Extensions */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		DECD3DCB25384EC2004B7A45 /* Base VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DCC25384F06004B7A45 /* Viewable.swift */,
+				DECD3DCE25384F2E004B7A45 /* Interactable.swift */,
+				DECD3DD025384F49004B7A45 /* Presentable.swift */,
+				DECD3DD225384F62004B7A45 /* Wireframeable.swift */,
+				DECD3DD425384F8B004B7A45 /* BaseWireframe.swift */,
+			);
+			path = "Base VIPER";
+			sourceTree = "<group>";
+		};
+		DECD3DD725385003004B7A45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DC725384E8E004B7A45 /* Autolayout + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DECD3DD825385026004B7A45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DD925385031004B7A45 /* BaseViewController.swift */,
+				DECD3DEA253852F5004B7A45 /* CardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DECD3DDB2538506A004B7A45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DBF2538448A004B7A45 /* DiscoverViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DECD3DDC2538506E004B7A45 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DE1253850DB004B7A45 /* DiscoverInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DECD3DDD25385076004B7A45 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DDF253850B8004B7A45 /* DiscoverPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DECD3DDE2538507B004B7A45 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DE3253850F0004B7A45 /* DiscoverWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		DECD3DEC253862BA004B7A45 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DED253862C5004B7A45 /* TMDB API */,
+				DECD3DEE253862DD004B7A45 /* Local Persistence  */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		DECD3DED253862C5004B7A45 /* TMDB API */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3E0325386C4E004B7A45 /* TMDBClient.swift */,
+				DECD3E0B253870B7004B7A45 /* MoviesService.swift */,
+			);
+			path = "TMDB API";
+			sourceTree = "<group>";
+		};
+		DECD3DEE253862DD004B7A45 /* Local Persistence  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Persistence ";
+			sourceTree = "<group>";
+		};
+		DECD3DF12538666C004B7A45 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3E0F2538814A004B7A45 /* BaseSevice */,
+				DECD3DFA2538680C004B7A45 /* Encoding */,
+				DECD3DF5253866DE004B7A45 /* Types */,
+				DECD3DF4253866B8004B7A45 /* BaseEndPoint */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		DECD3DF4253866B8004B7A45 /* BaseEndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DF225386692004B7A45 /* EndPointType.swift */,
+			);
+			path = BaseEndPoint;
+			sourceTree = "<group>";
+		};
+		DECD3DF5253866DE004B7A45 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DF625386705004B7A45 /* HTTPMethod.swift */,
+				DECD3DF82538674F004B7A45 /* HTTPTask.swift */,
+				DECD3E1225388443004B7A45 /* BaseServiceError.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		DECD3DFA2538680C004B7A45 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3DFB25386819004B7A45 /* ParameterEncoding.swift */,
+				DECD3DFD253868DA004B7A45 /* URLParameterEncoding.swift */,
+				DECD3DFF2538690B004B7A45 /* JSONParameterEncoding.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		DECD3E0F2538814A004B7A45 /* BaseSevice */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3E102538815A004B7A45 /* BaseService.swift */,
+			);
+			path = BaseSevice;
+			sourceTree = "<group>";
+		};
+		DECD3E14253887E0004B7A45 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3E15253887F5004B7A45 /* Enviroment.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,9 +423,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECD3DDA25385031004B7A45 /* BaseViewController.swift in Sources */,
+				DECD3E0425386C4E004B7A45 /* TMDBClient.swift in Sources */,
+				DECD3DE0253850B8004B7A45 /* DiscoverPresenter.swift in Sources */,
+				DECD3E002538690B004B7A45 /* JSONParameterEncoding.swift in Sources */,
+				DECD3DE925385289004B7A45 /* MovieCell.swift in Sources */,
+				DECD3E1325388443004B7A45 /* BaseServiceError.swift in Sources */,
+				DECD3DCF25384F2E004B7A45 /* Interactable.swift in Sources */,
+				DECD3DFE253868DA004B7A45 /* URLParameterEncoding.swift in Sources */,
+				DECD3DE4253850F0004B7A45 /* DiscoverWireframe.swift in Sources */,
+				DECD3DD325384F62004B7A45 /* Wireframeable.swift in Sources */,
+				DECD3DCD25384F06004B7A45 /* Viewable.swift in Sources */,
+				DECD3DEB253852F5004B7A45 /* CardView.swift in Sources */,
+				DECD3DD525384F8B004B7A45 /* BaseWireframe.swift in Sources */,
+				DECD3DE2253850DB004B7A45 /* DiscoverInteractor.swift in Sources */,
 				DECD3DC2253844B1004B7A45 /* SearchViewController.swift in Sources */,
+				DECD3DF92538674F004B7A45 /* HTTPTask.swift in Sources */,
+				DECD3E16253887F5004B7A45 /* Enviroment.swift in Sources */,
+				DECD3DD125384F49004B7A45 /* Presentable.swift in Sources */,
+				DECD3DC825384E8E004B7A45 /* Autolayout + Extensions.swift in Sources */,
+				DECD3DF725386705004B7A45 /* HTTPMethod.swift in Sources */,
+				DECD3DF325386692004B7A45 /* EndPointType.swift in Sources */,
 				DECD3DA225383DC1004B7A45 /* AppDelegate.swift in Sources */,
+				DECD3DFC25386819004B7A45 /* ParameterEncoding.swift in Sources */,
+				DECD3DC525384D86004B7A45 /* Movie.swift in Sources */,
 				DECD3DC02538448A004B7A45 /* DiscoverViewController.swift in Sources */,
+				DECD3E112538815A004B7A45 /* BaseService.swift in Sources */,
+				DECD3E0C253870B7004B7A45 /* MoviesService.swift in Sources */,
+				DECD3DE725385126004B7A45 /* DiscoverVIPERContract.swift in Sources */,
 				DECD3DBA25383FC0004B7A45 /* RootViewController.swift in Sources */,
 				DECD3DA425383DC1004B7A45 /* SceneDelegate.swift in Sources */,
 			);

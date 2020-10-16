@@ -24,7 +24,7 @@ extension MovieViewModel: MoviePresentable {
     
     var thumbnailURL: URL? {
         let fileSize = "w300"
-        let urlString = "\(Enviroment.current.baseImageURL)\(fileSize)/\(self._movie.posterPath)"
+        let urlString = "\(Enviroment.current.baseImageURL)\(fileSize)/\(self._movie.posterPath ?? "")"
        return URL(string: urlString)
     }
     

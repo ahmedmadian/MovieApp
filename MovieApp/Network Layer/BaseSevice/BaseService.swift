@@ -26,22 +26,32 @@ class BaseService {
                     return
                 }
                 
-                guard let data = data else {
-                    completionHandler(.failure(BaseServiceError.serverError(message: "No Data")))
-                    return
+                if let response = response as? HTTPURLResponse {
+                    if (200...299).contains(response.statusCode) {
+                        guard let data = data else {
+                            completionHandler(.failure(BaseServiceError.serverError(message: "No Data")))
+                            return
+                        }
+                        
+                        print(String(bytes: data, encoding: .utf8))
+                        print((response as? HTTPURLResponse)?.statusCode)
+                        
+                        do {
+                            let object = try JSONDecoder().decode(Model.self, from: data)
+                            completionHandler(Swift.Result.success(object))
+                        }
+                        catch {
+                            print(error)
+                            completionHandler(Swift.Result.failure(BaseServiceError.parsingError))
+                        }
+                        
+                    } else {
+                        
+                        completionHandler(.failure(self.handleUnSuccessfullStatusCode(response.statusCode)))
+                        
+                        
+                    }
                 }
-                print(String(bytes: data, encoding: .utf8))
-                print((response as? HTTPURLResponse)?.statusCode)
-                
-                do {
-                    let object = try JSONDecoder().decode(Model.self, from: data)
-                    completionHandler(Swift.Result.success(object))
-                }
-                catch {
-                    print(error)
-                    completionHandler(Swift.Result.failure(BaseServiceError.parsingError))
-                }
-                
             })
             
         }catch {
@@ -111,4 +121,12 @@ class BaseService {
         }
     }
     
+    
+    private func handleUnSuccessfullStatusCode(_ statusCode: Int) -> BaseServiceError{
+        switch statusCode {
+        case 401...500: return .authenticationError
+        case 501...599: return .badRequest
+        default: return .serverError(message: "Server Error \(statusCode)")
+        }
+    }
 }

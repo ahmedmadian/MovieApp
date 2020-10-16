@@ -21,14 +21,17 @@ class RootViewController: UITabBarController {
         self.tabBar.barTintColor  = .black
         self.tabBar.tintColor = .white
         self.tabBar.unselectedItemTintColor = .lightGray
-        
         self.tabBar.isTranslucent = true
         
         let a = DiscoverWireframe().viewController
         a.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 0)
+        
+        
 
-        let b = SearchViewController()
+        let b = UINavigationController(rootViewController: SearchWireframe().viewController)
         b.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        
+        
         
         self.setViewControllers([a,b], animated: true)
         

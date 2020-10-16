@@ -15,6 +15,8 @@ enum BaseServiceError: LocalizedError {
     case parametersNil
     case encodingFailed
     case missingURL
+    case authenticationError
+    case badRequest
     
     var errorDescription: String? {
         switch self {
@@ -23,6 +25,8 @@ enum BaseServiceError: LocalizedError {
         case .parametersNil: return "Parameters were nil."
         case .encodingFailed: return "Parameter encoding failed."
         case .missingURL: return "URL is nil."
+        case .authenticationError: return "Auth Error"
+        case .badRequest: return "Bad Request"
         }
     }
     

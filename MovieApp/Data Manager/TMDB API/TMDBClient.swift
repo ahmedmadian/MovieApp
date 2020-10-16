@@ -66,7 +66,9 @@ extension TMDBClient.TMDBEndPoint: EndPointType {
         case .search(let searchTerm):
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
-                                      urlParameters: ["query":searchTerm])
+                                      urlParameters: [
+                                        "query":searchTerm,
+                                        "api_key":TMDBClient.TMDB_API_KEY])
         }
     }
     

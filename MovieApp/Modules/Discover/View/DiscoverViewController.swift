@@ -46,8 +46,6 @@ class DiscoverViewController: BaseViewController {
     }
     
     private func setupView() {
-        self.view.backgroundColor = .black
-//        let image = UIImage(named: "home")!
         self.setupViewLayout()
     }
     

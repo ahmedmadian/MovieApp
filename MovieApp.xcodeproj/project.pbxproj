@@ -41,6 +41,10 @@
 		DECD3E16253887F5004B7A45 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E15253887F5004B7A45 /* Enviroment.swift */; };
 		DECD3E182538EA76004B7A45 /* UIImageView + Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E172538EA76004B7A45 /* UIImageView + Caching.swift */; };
 		DECD3E1A2538ED20004B7A45 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E192538ED20004B7A45 /* MovieViewModel.swift */; };
+		DECD3E202539F40F004B7A45 /* SearchVIPERContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E1F2539F40F004B7A45 /* SearchVIPERContract.swift */; };
+		DECD3E222539F483004B7A45 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E212539F483004B7A45 /* SearchPresenter.swift */; };
+		DECD3E242539F4BA004B7A45 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E232539F4BA004B7A45 /* SearchInteractor.swift */; };
+		DECD3E262539F4E8004B7A45 /* SearchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E252539F4E8004B7A45 /* SearchWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		DECD3E15253887F5004B7A45 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 		DECD3E172538EA76004B7A45 /* UIImageView + Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Caching.swift"; sourceTree = "<group>"; };
 		DECD3E192538ED20004B7A45 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		DECD3E1F2539F40F004B7A45 /* SearchVIPERContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVIPERContract.swift; sourceTree = "<group>"; };
+		DECD3E212539F483004B7A45 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		DECD3E232539F4BA004B7A45 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		DECD3E252539F4E8004B7A45 /* SearchWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWireframe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,10 +185,11 @@
 		DECD3DBC25384435004B7A45 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				DECD3E1D2539F38B004B7A45 /* New Group */,
-				DECD3E1C2539F37A004B7A45 /* Interactor */,
+				DECD3E1F2539F40F004B7A45 /* SearchVIPERContract.swift */,
 				DECD3E1B2539F376004B7A45 /* View */,
-				DECD3DC1253844B1004B7A45 /* SearchViewController.swift */,
+				DECD3E1D2539F38B004B7A45 /* Presenter */,
+				DECD3E1C2539F37A004B7A45 /* Interactor */,
+				DECD3E1E2539F3E8004B7A45 /* Wireframe */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -365,6 +374,7 @@
 		DECD3E1B2539F376004B7A45 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DECD3DC1253844B1004B7A45 /* SearchViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -372,15 +382,25 @@
 		DECD3E1C2539F37A004B7A45 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				DECD3E232539F4BA004B7A45 /* SearchInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		DECD3E1D2539F38B004B7A45 /* New Group */ = {
+		DECD3E1D2539F38B004B7A45 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				DECD3E212539F483004B7A45 /* SearchPresenter.swift */,
 			);
-			path = "New Group";
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DECD3E1E2539F3E8004B7A45 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				DECD3E252539F4E8004B7A45 /* SearchWireframe.swift */,
+			);
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,13 +481,16 @@
 				DECD3DE925385289004B7A45 /* MovieCell.swift in Sources */,
 				DECD3E1325388443004B7A45 /* BaseServiceError.swift in Sources */,
 				DECD3DCF25384F2E004B7A45 /* Interactable.swift in Sources */,
+				DECD3E202539F40F004B7A45 /* SearchVIPERContract.swift in Sources */,
 				DECD3DFE253868DA004B7A45 /* URLParameterEncoding.swift in Sources */,
 				DECD3DE4253850F0004B7A45 /* DiscoverWireframe.swift in Sources */,
 				DECD3DD325384F62004B7A45 /* Wireframeable.swift in Sources */,
 				DECD3DCD25384F06004B7A45 /* Viewable.swift in Sources */,
 				DECD3DEB253852F5004B7A45 /* CardView.swift in Sources */,
+				DECD3E222539F483004B7A45 /* SearchPresenter.swift in Sources */,
 				DECD3DD525384F8B004B7A45 /* BaseWireframe.swift in Sources */,
 				DECD3DE2253850DB004B7A45 /* DiscoverInteractor.swift in Sources */,
+				DECD3E262539F4E8004B7A45 /* SearchWireframe.swift in Sources */,
 				DECD3DC2253844B1004B7A45 /* SearchViewController.swift in Sources */,
 				DECD3DF92538674F004B7A45 /* HTTPTask.swift in Sources */,
 				DECD3E16253887F5004B7A45 /* Enviroment.swift in Sources */,
@@ -485,6 +508,7 @@
 				DECD3DE725385126004B7A45 /* DiscoverVIPERContract.swift in Sources */,
 				DECD3DBA25383FC0004B7A45 /* RootViewController.swift in Sources */,
 				DECD3DA425383DC1004B7A45 /* SceneDelegate.swift in Sources */,
+				DECD3E242539F4BA004B7A45 /* SearchInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

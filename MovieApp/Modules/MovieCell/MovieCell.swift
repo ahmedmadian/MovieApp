@@ -13,7 +13,7 @@ class MovieCell: UICollectionViewCell {
     // MARK: - Views
     
     private var movieImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "movie-ph"))
+        let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -23,7 +23,7 @@ class MovieCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupViewLayout()
-        self.backgroundColor = .red
+        self.backgroundColor = .lightGray
         self.layer.cornerRadius = 5
     }
     

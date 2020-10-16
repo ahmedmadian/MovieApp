@@ -8,11 +8,18 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
-
+class SearchViewController: BaseViewController {
+    
+    // MARK: - Public properties -
+    
+    var presenter: SearchPresentation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
     }
+    
+}
 
+extension SearchViewController : SearchView {
+    
 }

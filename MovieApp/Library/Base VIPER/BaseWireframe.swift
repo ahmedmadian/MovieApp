@@ -72,3 +72,12 @@ extension UINavigationController {
     }
     
 }
+
+extension UITabBarController {
+    
+    func setRootRoute(_ routes: [BaseWireframe], animated: Bool = true) {
+        let viewControllers = routes.map { $0.viewController}
+        self.setViewControllers(viewControllers, animated: animated)
+    }
+    
+}

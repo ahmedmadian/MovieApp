@@ -10,4 +10,22 @@ import Foundation
 
 class DiscoverInteractor {
     
+    private let _moviesService: MoviesRemoteService
+    
+    init(moviesService: MoviesRemoteService) {
+        self._moviesService = moviesService
+    }
+}
+
+extension DiscoverInteractor: DiscoverInteraction {
+    func getMovies(_ completion: @escaping (Result<[Movie], Error>) -> Void) {
+        self._moviesService.getDiscoverMovies{ (result) in
+            switch result {
+            case .success(let movies):
+                completion(.success(movies))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

@@ -9,6 +9,10 @@
 import UIKit
 
 class DiscoverViewController: BaseViewController {
+    
+    // MARK: - Public properties -
+    
+    var presenter: DiscoverPresentation!
 
     // MARK: - View Hierachy -
     
@@ -37,21 +41,13 @@ class DiscoverViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        
-        MoviesRemoteService().getDiscoverMovies { (result) in
-            switch result {
-            case .success(let movie):
-                print(movie)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
+        self.presenter.viewDidLoad()
         
     }
     
     private func setupView() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .black
+//        let image = UIImage(named: "home")!
         self.setupViewLayout()
     }
     
@@ -60,19 +56,24 @@ class DiscoverViewController: BaseViewController {
         self._collectionView.pinEdgesToSuperview()
     }
     
-    
-    
+}
 
+extension DiscoverViewController: DiscoverView {
+    
+    func updateView() {
+        self._collectionView.reloadData()
+    }
+    
 }
 
 extension DiscoverViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return self.presenter.numberOfSections
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.presenter.numberOrItems(in: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,11 +81,12 @@ extension DiscoverViewController: UICollectionViewDataSource {
             fatalError("Unresolved Error, Couldn't load cell with identifier \(String(describing: MovieCell.self))")
         }
         
+        self.presenter.config(cell: cell, at: indexPath)
+        
         return cell
     }
     
     
 }
-
 
 

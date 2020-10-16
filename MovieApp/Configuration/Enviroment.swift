@@ -33,4 +33,11 @@ enum Enviroment: String {
         return .staging
     }()
     
+    var baseImageURL: String {
+        switch self {
+        case .staging:
+            return "https://image.tmdb.org/t/p/"  
+        }
+    }
+    
 }

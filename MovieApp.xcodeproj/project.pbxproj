@@ -39,6 +39,8 @@
 		DECD3E112538815A004B7A45 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E102538815A004B7A45 /* BaseService.swift */; };
 		DECD3E1325388443004B7A45 /* BaseServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E1225388443004B7A45 /* BaseServiceError.swift */; };
 		DECD3E16253887F5004B7A45 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E15253887F5004B7A45 /* Enviroment.swift */; };
+		DECD3E182538EA76004B7A45 /* UIImageView + Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E172538EA76004B7A45 /* UIImageView + Caching.swift */; };
+		DECD3E1A2538ED20004B7A45 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E192538ED20004B7A45 /* MovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		DECD3E102538815A004B7A45 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		DECD3E1225388443004B7A45 /* BaseServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceError.swift; sourceTree = "<group>"; };
 		DECD3E15253887F5004B7A45 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		DECD3E172538EA76004B7A45 /* UIImageView + Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Caching.swift"; sourceTree = "<group>"; };
+		DECD3E192538ED20004B7A45 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +112,13 @@
 		DECD3DA025383DC1004B7A45 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
-				DECD3E14253887E0004B7A45 /* Configuration */,
-				DECD3DF12538666C004B7A45 /* Network Layer */,
-				DECD3DEC253862BA004B7A45 /* Data Manager */,
-				DECD3DC625384E5A004B7A45 /* Library */,
-				DECD3DC325384D76004B7A45 /* Entities */,
 				DECD3DB525383DCF004B7A45 /* Application */,
+				DECD3E14253887E0004B7A45 /* Configuration */,
+				DECD3DEC253862BA004B7A45 /* Data Manager */,
+				DECD3DC325384D76004B7A45 /* Entities */,
+				DECD3DC625384E5A004B7A45 /* Library */,
 				DECD3DB825383E8D004B7A45 /* Modules */,
+				DECD3DF12538666C004B7A45 /* Network Layer */,
 				DECD3DB725383E5D004B7A45 /* Resources */,
 				DECD3DB625383E42004B7A45 /* Supporting Files */,
 			);
@@ -173,6 +177,9 @@
 		DECD3DBC25384435004B7A45 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				DECD3E1D2539F38B004B7A45 /* New Group */,
+				DECD3E1C2539F37A004B7A45 /* Interactor */,
+				DECD3E1B2539F376004B7A45 /* View */,
 				DECD3DC1253844B1004B7A45 /* SearchViewController.swift */,
 			);
 			path = Search;
@@ -182,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				DECD3DE825385289004B7A45 /* MovieCell.swift */,
+				DECD3E192538ED20004B7A45 /* MovieViewModel.swift */,
 			);
 			path = MovieCell;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				DECD3DC725384E8E004B7A45 /* Autolayout + Extensions.swift */,
+				DECD3E172538EA76004B7A45 /* UIImageView + Caching.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,6 +362,27 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		DECD3E1B2539F376004B7A45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DECD3E1C2539F37A004B7A45 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DECD3E1D2539F38B004B7A45 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,6 +455,7 @@
 			files = (
 				DECD3DDA25385031004B7A45 /* BaseViewController.swift in Sources */,
 				DECD3E0425386C4E004B7A45 /* TMDBClient.swift in Sources */,
+				DECD3E182538EA76004B7A45 /* UIImageView + Caching.swift in Sources */,
 				DECD3DE0253850B8004B7A45 /* DiscoverPresenter.swift in Sources */,
 				DECD3E002538690B004B7A45 /* JSONParameterEncoding.swift in Sources */,
 				DECD3DE925385289004B7A45 /* MovieCell.swift in Sources */,
@@ -449,6 +480,7 @@
 				DECD3DC525384D86004B7A45 /* Movie.swift in Sources */,
 				DECD3DC02538448A004B7A45 /* DiscoverViewController.swift in Sources */,
 				DECD3E112538815A004B7A45 /* BaseService.swift in Sources */,
+				DECD3E1A2538ED20004B7A45 /* MovieViewModel.swift in Sources */,
 				DECD3E0C253870B7004B7A45 /* MoviesService.swift in Sources */,
 				DECD3DE725385126004B7A45 /* DiscoverVIPERContract.swift in Sources */,
 				DECD3DBA25383FC0004B7A45 /* RootViewController.swift in Sources */,

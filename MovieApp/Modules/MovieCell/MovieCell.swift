@@ -39,3 +39,14 @@ class MovieCell: UICollectionViewCell {
     }
     
 }
+
+extension MovieCell: MovieItemView {
+    func configView(with viewModel: MoviePresentable) {
+        if let url = viewModel.thumbnailURL {
+             self.movieImageView.loadImageFromUrl(url: url)
+        }
+        
+    }
+    
+    
+}

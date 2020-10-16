@@ -9,20 +9,32 @@
 import Foundation
 
 protocol DiscoverView: Viewable {
+    func updateView()
 }
 
 protocol DiscoverPresentation: Presentable {
-   
+    var numberOfSections: Int { get }
+    func numberOrItems(in section: Int) -> Int
+    func config(cell: MovieItemView, at indexPath: IndexPath)
 }
 
 protocol DiscoverInteraction: Interactable {
+     func getMovies(_ completion: @escaping (Result<[Movie], Error>) -> Void)
 }
 
 protocol DiscoverWireframeInterface: Wireframeable {
 }
 
 
-//protocol RecipeItemView {
-//    func configView(with viewModel: RecipeViewModel)
-//}
-//
+protocol MovieItemView {
+    func configView(with viewModel: MoviePresentable)
+}
+
+protocol MoviePresentable {
+    
+    var name: String { get }
+    var thumbnailURL: URL? { get }
+    var releaseDate: String { get }
+    var overView: String { get }
+    
+}

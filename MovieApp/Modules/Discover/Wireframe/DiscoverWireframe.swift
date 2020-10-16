@@ -8,6 +8,18 @@
 
 import Foundation
 
-class DiscoverWireframe {
+class DiscoverWireframe: BaseWireframe {
     
+    // MARK: - Module setup -
+    
+    init() {
+        let moduleViewController = DiscoverViewController()
+        super.init(viewController: moduleViewController)
+        
+        let interactor = DiscoverInteractor(moviesService: MoviesRemoteService())
+        
+        let presenter = DiscoverPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
+        
+        moduleViewController.presenter = presenter
+    }
 }

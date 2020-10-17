@@ -23,9 +23,8 @@ class SearchInteractor {
 }
 
 extension SearchInteractor: SearchInteraction {
-    func searchForMovie(with searchTerm: String, _ completion: @escaping (Result<[Movie], Error>) -> Void) {
-        
-        self._moviesService.searchforMovie(with: searchTerm) { result in
+    func searchForMovie(with searchTerm: String, page: Int, _ completion: @escaping (Result<[Movie], Error>) -> Void) {
+        self._moviesService.searchforMovie(with: searchTerm, page: page) { result in
             switch result {
             case .success(let movies):
                 completion(.success(movies))

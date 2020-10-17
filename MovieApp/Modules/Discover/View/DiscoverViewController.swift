@@ -13,30 +13,30 @@ class DiscoverViewController: BaseViewController {
     // MARK: - Public properties -
     
     var presenter: DiscoverPresentation!
-
+    
     // MARK: - View Hierachy -
     
-    private lazy var _collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
-        collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(MovieCell.self, forCellWithReuseIdentifier: String(describing: MovieCell.self))
-        collectionView.dataSource = self
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        return collectionView
+    private lazy var tableView: UITableView = {
+        let tabelView = UITableView()
+        tabelView.backgroundColor = .clear
+        tabelView.separatorStyle = .none
+        tabelView.showsVerticalScrollIndicator = false
+        tabelView.rowHeight = (self.view.frame.height) / 3
+        tabelView.register(MovieCell.self, forCellReuseIdentifier: String(describing: MovieCell.self))
+        tabelView.dataSource = self
+        tabelView.delegate = self
+        tabelView.showsHorizontalScrollIndicator = false
+        return tabelView
     }()
     
-    private lazy var flowLayout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
-        layout.scrollDirection = .vertical
-        let height = (self.view.frame.height - 30) / 3
-        let width = (self.view.frame.width - 30) / 2
-        layout.itemSize = CGSize(width: width, height: height)
-        return layout
+    private lazy var footerView: UIView = {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.view.frame.height))
+        let spinner = UIActivityIndicatorView(style: .large)
+        footerView.addSubview(spinner)
+        spinner.pinToSuperview(forAtrributes: [.centerX, .centerY])
+        spinner.startAnimating()
+        return footerView
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,38 +50,56 @@ class DiscoverViewController: BaseViewController {
     }
     
     private func setupViewLayout() {
-        self.view.addSubview(self._collectionView)
-        self._collectionView.pinEdgesToSuperview()
+        self.view.addSubview(self.tableView)
+        self.tableView.pinEdgesToSuperview()
     }
     
 }
 
-extension DiscoverViewController: DiscoverView {
-    
-    func updateView() {
-        self._collectionView.reloadData()
-    }
-    
-}
 
-extension DiscoverViewController: UICollectionViewDataSource {
+extension DiscoverViewController: UITableViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return self.presenter.numberOfSections
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.presenter.numberOrItems(in: section)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.presenter.numberOrRows(in: section)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MovieCell.self), for: indexPath) as? MovieCell else {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MovieCell.self), for: indexPath) as? MovieCell else {
             fatalError("Unresolved Error, Couldn't load cell with identifier \(String(describing: MovieCell.self))")
         }
         
         self.presenter.config(cell: cell, at: indexPath)
         
         return cell
+    }
+    
+}
+
+extension DiscoverViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
+            self.presenter.didScrollToEnd()
+        }
+    }
+}
+
+extension DiscoverViewController: DiscoverView {
+    
+    func updateView() {
+        self.tableView.reloadData()
+    }
+    
+    func showTableViewFooter() {
+        self.tableView.tableFooterView = self.footerView
+    }
+    
+    func hideTableViewFooter() {
+        self.tableView.tableFooterView = nil
     }
     
     

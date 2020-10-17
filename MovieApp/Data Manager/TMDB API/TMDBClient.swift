@@ -22,8 +22,8 @@ extension TMDBClient {
     
     // MARK: - API EndPoints
     enum TMDBEndPoint {
-        case discover
-        case search(String)
+        case discover(page: Int)
+        case search(searchTerm: String, page: Int)
     }
     
 }
@@ -59,16 +59,19 @@ extension TMDBClient.TMDBEndPoint: EndPointType {
     
     var task: HTTPTask {
         switch self {
-        case .discover:
+        case .discover(let page):
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
-                                      urlParameters: ["api_key":TMDBClient.TMDB_API_KEY])
-        case .search(let searchTerm):
+                                      urlParameters: [
+                                        "api_key":TMDBClient.TMDB_API_KEY,
+                                        "page": "\(page)"])
+        case .search(let searchTerm, let page):
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
                                       urlParameters: [
                                         "query":searchTerm,
-                                        "api_key":TMDBClient.TMDB_API_KEY])
+                                        "api_key":TMDBClient.TMDB_API_KEY,
+                                        "page": "\(page)"])
         }
     }
     

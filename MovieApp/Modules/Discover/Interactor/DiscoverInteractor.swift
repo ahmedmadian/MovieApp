@@ -18,8 +18,8 @@ class DiscoverInteractor {
 }
 
 extension DiscoverInteractor: DiscoverInteraction {
-    func getMovies(_ completion: @escaping (Result<[Movie], Error>) -> Void) {
-        self._moviesService.getDiscoverMovies{ (result) in
+    func getMovies(page: Int, _ completion: @escaping (Result<[Movie], Error>) -> Void) {
+        self._moviesService.getDiscoverMovies(page: page){ (result) in
             switch result {
             case .success(let movies):
                 completion(.success(movies))

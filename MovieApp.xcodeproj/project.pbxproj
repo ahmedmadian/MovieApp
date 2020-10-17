@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE03216F253A3812001F0D96 /* hello.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE03216E253A3812001F0D96 /* hello.storyboard */; };
+		DE032173253B2E0C001F0D96 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE032172253B2E0C001F0D96 /* SearchHistoryCell.swift */; };
+		DE032175253B5811001F0D96 /* UITableView + EmptyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE032174253B5811001F0D96 /* UITableView + EmptyDataSource.swift */; };
 		DECD3DA225383DC1004B7A45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DA125383DC1004B7A45 /* AppDelegate.swift */; };
 		DECD3DA425383DC1004B7A45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DA325383DC1004B7A45 /* SceneDelegate.swift */; };
 		DECD3DAB25383DC3004B7A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECD3DAA25383DC3004B7A45 /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE03216E253A3812001F0D96 /* hello.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = hello.storyboard; sourceTree = "<group>"; };
+		DE032172253B2E0C001F0D96 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
+		DE032174253B5811001F0D96 /* UITableView + EmptyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + EmptyDataSource.swift"; sourceTree = "<group>"; };
 		DECD3D9E25383DC1004B7A45 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD3DA125383DC1004B7A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECD3DA325383DC1004B7A45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE032171253B2DE7001F0D96 /* SearchHistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE032172253B2E0C001F0D96 /* SearchHistoryCell.swift */,
+			);
+			path = SearchHistoryCell;
+			sourceTree = "<group>";
+		};
 		DECD3D9525383DC1004B7A45 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +180,7 @@
 				DECD3DBB2538442F004B7A45 /* Discover */,
 				DECD3DBC25384435004B7A45 /* Search */,
 				DECD3DBD25384443004B7A45 /* MovieCell */,
+				DE032171253B2DE7001F0D96 /* SearchHistoryCell */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -198,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				DECD3DE825385289004B7A45 /* MovieCell.swift */,
+				DE03216E253A3812001F0D96 /* hello.storyboard */,
 				DECD3E192538ED20004B7A45 /* MovieViewModel.swift */,
 			);
 			path = MovieCell;
@@ -246,6 +262,7 @@
 			children = (
 				DECD3DC725384E8E004B7A45 /* Autolayout + Extensions.swift */,
 				DECD3E172538EA76004B7A45 /* UIImageView + Caching.swift */,
+				DE032174253B5811001F0D96 /* UITableView + EmptyDataSource.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -463,6 +480,7 @@
 			files = (
 				DECD3DAE25383DC3004B7A45 /* LaunchScreen.storyboard in Resources */,
 				DECD3DAB25383DC3004B7A45 /* Assets.xcassets in Resources */,
+				DE03216F253A3812001F0D96 /* hello.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,7 +513,9 @@
 				DECD3DF92538674F004B7A45 /* HTTPTask.swift in Sources */,
 				DECD3E16253887F5004B7A45 /* Enviroment.swift in Sources */,
 				DECD3DD125384F49004B7A45 /* Presentable.swift in Sources */,
+				DE032175253B5811001F0D96 /* UITableView + EmptyDataSource.swift in Sources */,
 				DECD3DC825384E8E004B7A45 /* Autolayout + Extensions.swift in Sources */,
+				DE032173253B2E0C001F0D96 /* SearchHistoryCell.swift in Sources */,
 				DECD3DF725386705004B7A45 /* HTTPMethod.swift in Sources */,
 				DECD3DF325386692004B7A45 /* EndPointType.swift in Sources */,
 				DECD3DA225383DC1004B7A45 /* AppDelegate.swift in Sources */,

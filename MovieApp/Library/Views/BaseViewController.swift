@@ -22,6 +22,7 @@ class BaseViewController: UIViewController {
     lazy var activity: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
         activity.style = .large
+        activity.color = .red
         self.view.addSubview(activity)
         activity.pinToSuperview(forAtrributes: [.centerX, .centerY])
         return activity

@@ -11,8 +11,8 @@ import Foundation
 class MoviesRemoteService: BaseService {
 
     
-    func getDiscoverMovies(completionHandler: @escaping (Swift.Result<[Movie], Error>) -> Void) {
-        let endPoint: TMDBClient.TMDBEndPoint = .discover
+    func getDiscoverMovies(page: Int, completionHandler: @escaping (Swift.Result<[Movie], Error>) -> Void) {
+        let endPoint: TMDBClient.TMDBEndPoint = .discover(page: page)
         self.execute(endPoint: endPoint) { (result: Result<GenericResoponse<Movie>, Error>) in
             
             switch result {
@@ -25,8 +25,8 @@ class MoviesRemoteService: BaseService {
         }
     }
     
-    func searchforMovie(with searchTerm: String, completionHandler: @escaping (Swift.Result<[Movie], Error>) -> Void) {
-        let endPoint: TMDBClient.TMDBEndPoint = .search(searchTerm)
+    func searchforMovie(with searchTerm: String, page: Int, completionHandler: @escaping (Swift.Result<[Movie], Error>) -> Void) {
+        let endPoint: TMDBClient.TMDBEndPoint = .search(searchTerm: searchTerm, page: page)
         self.execute(endPoint: endPoint) { (result: Result<GenericResoponse<Movie>, Error>) in
             
             switch result {

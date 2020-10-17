@@ -10,16 +10,19 @@ import Foundation
 
 protocol DiscoverView: Viewable {
     func updateView()
+    func showTableViewFooter()
+    func hideTableViewFooter()
 }
 
 protocol DiscoverPresentation: Presentable {
     var numberOfSections: Int { get }
-    func numberOrItems(in section: Int) -> Int
+    func numberOrRows(in section: Int) -> Int
     func config(cell: MovieItemView, at indexPath: IndexPath)
+    func didScrollToEnd()
 }
 
 protocol DiscoverInteraction: Interactable {
-     func getMovies(_ completion: @escaping (Result<[Movie], Error>) -> Void)
+    func getMovies(page: Int, _ completion: @escaping (Result<[Movie], Error>) -> Void)
 }
 
 protocol DiscoverWireframeInterface: Wireframeable {

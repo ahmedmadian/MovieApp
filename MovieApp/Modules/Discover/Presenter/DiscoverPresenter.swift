@@ -16,6 +16,8 @@ class DiscoverPresenter {
     private var _interactor: DiscoverInteraction
     private var _wireframe: DiscoverWireframe
     private var _items: [Movie]
+    private var _pageNumber = 1
+    private var _isLoading = false
     
     init(view: DiscoverView, interactor: DiscoverInteraction, wireframe: DiscoverWireframe) {
         self._view = view
@@ -24,16 +26,19 @@ class DiscoverPresenter {
         self._items = []
     }
     
-    private func fetchMovies() {
-        self._interactor.getMovies { [unowned self] (result) in
+    private func fetchMovies(for page: Int) {
+        self._isLoading = true
+        self._interactor.getMovies(page: page) { [unowned self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let movies):
-                    self._items = movies
+                    self._items.append(contentsOf: movies)
                     self._view.updateView()
                 case.failure(let error):
                     self._wireframe.showErrorAlert(with: error.localizedDescription)
                 }
+                self._isLoading = false
+                self._view.hideTableViewFooter()
                 self._view.hideLoader()
             }
         }
@@ -41,21 +46,29 @@ class DiscoverPresenter {
 }
 
 extension DiscoverPresenter: DiscoverPresentation {
+    
     var numberOfSections: Int {
         return 1
     }
     
     func viewDidLoad() {
         self._view.showLoader()
-        self.fetchMovies()
+        self.fetchMovies(for: self._pageNumber)
     }
     
-    func numberOrItems(in section: Int) -> Int {
+    func numberOrRows(in section: Int) -> Int {
         return self._items.count
     }
     
     func config(cell: MovieItemView, at indexPath: IndexPath) {
         let viewModel = MovieViewModel(movie: self._items[indexPath.row])
         cell.configView(with: viewModel)
+    }
+    
+    func didScrollToEnd() {
+        if _isLoading { return }
+        self._view.showTableViewFooter()
+        self._pageNumber += 1
+        self.fetchMovies(for: self._pageNumber)
     }
 }

@@ -15,6 +15,8 @@ Clone the repository by executing the following command from the command line.
 ```bash
 git clone https://github.com/ahmedmadian/MovieApp.git
 ```
+### Step 2: Build and Run
+
 ### Dependency Graph
 
 According to VIPER Architecture, every Modules have 5 main parts, The main parts of each module are:

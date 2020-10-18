@@ -27,7 +27,6 @@ class MovieCell: UITableViewCell {
         return imageView
     }()
     
-    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -61,6 +60,7 @@ class MovieCell: UITableViewCell {
         self.setupViewLayout()
         self.backgroundColor = .clear
         self.selectionStyle = .none
+        self.animateCell()
     }
     
     required init?(coder: NSCoder) {
@@ -103,7 +103,15 @@ class MovieCell: UITableViewCell {
 //        self.overViewLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
     }
     
-    
+    private func animateCell() {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
+        self.layer.transform = rotationTransform
+        self.alpha = 0.5
+        UIView.animate(withDuration: 1.0) {
+            self.layer.transform = CATransform3DIdentity
+            self.alpha = 1.0
+        }
+    }
 }
 
 extension MovieCell: MovieItemView {

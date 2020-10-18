@@ -12,26 +12,34 @@ class SearchInteractor {
     
     // MARK: - Private Properties -
     
-    private let _moviesService: MoviesRemoteService
+    private let _moviesGateway: MoviesGateway
+    private let _searchTermsGateway: SearchTermsGateway
     
     // MARK: - Life Cycle
     
-    init(moviesService: MoviesRemoteService) {
-        self._moviesService = moviesService
+    init(moviesService: MoviesGateway, searchTermsGateway: SearchTermsGateway) {
+        self._moviesGateway = moviesService
+        self._searchTermsGateway = searchTermsGateway
     }
     
 }
 
 extension SearchInteractor: SearchInteraction {
+    
     func searchForMovie(with searchTerm: String, page: Int, _ completion: @escaping (Result<[Movie], Error>) -> Void) {
-        self._moviesService.searchforMovie(with: searchTerm, page: page) { result in
-            switch result {
-            case .success(let movies):
-                completion(.success(movies))
-            case .failure(let error):
-                completion(.failure(error))
-            }
+        self._moviesGateway.searchforMovie(with: searchTerm, page: page) { result in
+           completion(result)
         }
+    }
+    
+    func getSearchTerms(_ completion: @escaping FetchSearchTermsEntityGatewayCompletionHandler) {
+        self._searchTermsGateway.getAllSearchTerms { (result) in
+            completion(result)
+        }
+    }
+    
+    func save(searchTerms: [String]) {
+        self._searchTermsGateway.save(searchTerms: searchTerms)
     }
     
 }

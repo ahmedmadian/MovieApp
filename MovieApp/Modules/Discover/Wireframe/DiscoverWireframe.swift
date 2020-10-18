@@ -16,7 +16,7 @@ class DiscoverWireframe: BaseWireframe {
         let moduleViewController = DiscoverViewController()
         super.init(viewController: moduleViewController)
         
-        let interactor = DiscoverInteractor(moviesService: MoviesRemoteService())
+        let interactor = DiscoverInteractor(moviesService: MoviesRemoteGatewayToTMDB())
         
         let presenter = DiscoverPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         

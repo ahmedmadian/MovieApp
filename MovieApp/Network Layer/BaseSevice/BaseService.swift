@@ -17,8 +17,6 @@ class BaseService {
         do {
             let request = try self.buildRequest(from: endPoint)
             
-            print(request.url)
-            
             task = session.dataTask(with: request, completionHandler: { (data, response, error) in
                 
                 guard error == nil else {
@@ -32,9 +30,6 @@ class BaseService {
                             completionHandler(.failure(BaseServiceError.serverError(message: "No Data")))
                             return
                         }
-                        
-                        print(String(bytes: data, encoding: .utf8))
-                        print((response as? HTTPURLResponse)?.statusCode)
                         
                         do {
                             let object = try JSONDecoder().decode(Model.self, from: data)

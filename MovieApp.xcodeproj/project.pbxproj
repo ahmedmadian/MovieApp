@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE03216F253A3812001F0D96 /* hello.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE03216E253A3812001F0D96 /* hello.storyboard */; };
 		DE032173253B2E0C001F0D96 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE032172253B2E0C001F0D96 /* SearchHistoryCell.swift */; };
 		DE032175253B5811001F0D96 /* UITableView + EmptyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE032174253B5811001F0D96 /* UITableView + EmptyDataSource.swift */; };
+		DE032177253B6039001F0D96 /* MoviesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE032176253B6039001F0D96 /* MoviesGateway.swift */; };
+		DE03217A253B629E001F0D96 /* SearchTermsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE032179253B629E001F0D96 /* SearchTermsGateway.swift */; };
+		DE03217C253B630C001F0D96 /* SearchTermLocalGetway.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03217B253B630C001F0D96 /* SearchTermLocalGetway.swift */; };
+		DE032180253B6A25001F0D96 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03217F253B6A25001F0D96 /* Storage.swift */; };
+		DE032182253B6AB4001F0D96 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE032181253B6AB4001F0D96 /* DiskStorage.swift */; };
+		DE032184253B6B0A001F0D96 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE032183253B6B0A001F0D96 /* CodableStorage.swift */; };
 		DECD3DA225383DC1004B7A45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DA125383DC1004B7A45 /* AppDelegate.swift */; };
 		DECD3DA425383DC1004B7A45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DA325383DC1004B7A45 /* SceneDelegate.swift */; };
 		DECD3DAB25383DC3004B7A45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DECD3DAA25383DC3004B7A45 /* Assets.xcassets */; };
@@ -38,7 +43,7 @@
 		DECD3DFE253868DA004B7A45 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DFD253868DA004B7A45 /* URLParameterEncoding.swift */; };
 		DECD3E002538690B004B7A45 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3DFF2538690B004B7A45 /* JSONParameterEncoding.swift */; };
 		DECD3E0425386C4E004B7A45 /* TMDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E0325386C4E004B7A45 /* TMDBClient.swift */; };
-		DECD3E0C253870B7004B7A45 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E0B253870B7004B7A45 /* MoviesService.swift */; };
+		DECD3E0C253870B7004B7A45 /* MoviesRemoteGatewayToTMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E0B253870B7004B7A45 /* MoviesRemoteGatewayToTMDB.swift */; };
 		DECD3E112538815A004B7A45 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E102538815A004B7A45 /* BaseService.swift */; };
 		DECD3E1325388443004B7A45 /* BaseServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E1225388443004B7A45 /* BaseServiceError.swift */; };
 		DECD3E16253887F5004B7A45 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD3E15253887F5004B7A45 /* Enviroment.swift */; };
@@ -51,10 +56,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE03216E253A3812001F0D96 /* hello.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = hello.storyboard; sourceTree = "<group>"; };
 		DE032172253B2E0C001F0D96 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
 		DE032174253B5811001F0D96 /* UITableView + EmptyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + EmptyDataSource.swift"; sourceTree = "<group>"; };
-		DECD3D9E25383DC1004B7A45 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE032176253B6039001F0D96 /* MoviesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesGateway.swift; sourceTree = "<group>"; };
+		DE032179253B629E001F0D96 /* SearchTermsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermsGateway.swift; sourceTree = "<group>"; };
+		DE03217B253B630C001F0D96 /* SearchTermLocalGetway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermLocalGetway.swift; sourceTree = "<group>"; };
+		DE03217F253B6A25001F0D96 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		DE032181253B6AB4001F0D96 /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
+		DE032183253B6B0A001F0D96 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
+		DECD3D9E25383DC1004B7A45 /* Cornet Elevated.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cornet Elevated.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DECD3DA125383DC1004B7A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DECD3DA325383DC1004B7A45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DECD3DAA25383DC3004B7A45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +94,7 @@
 		DECD3DFD253868DA004B7A45 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
 		DECD3DFF2538690B004B7A45 /* JSONParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoding.swift; sourceTree = "<group>"; };
 		DECD3E0325386C4E004B7A45 /* TMDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBClient.swift; sourceTree = "<group>"; };
-		DECD3E0B253870B7004B7A45 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
+		DECD3E0B253870B7004B7A45 /* MoviesRemoteGatewayToTMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRemoteGatewayToTMDB.swift; sourceTree = "<group>"; };
 		DECD3E102538815A004B7A45 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		DECD3E1225388443004B7A45 /* BaseServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceError.swift; sourceTree = "<group>"; };
 		DECD3E15253887F5004B7A45 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
@@ -115,6 +125,17 @@
 			path = SearchHistoryCell;
 			sourceTree = "<group>";
 		};
+		DE032178253B61F6001F0D96 /* EntitysGetway */ = {
+			isa = PBXGroup;
+			children = (
+				DE032176253B6039001F0D96 /* MoviesGateway.swift */,
+				DE032179253B629E001F0D96 /* SearchTermsGateway.swift */,
+				DECD3E0B253870B7004B7A45 /* MoviesRemoteGatewayToTMDB.swift */,
+				DE03217B253B630C001F0D96 /* SearchTermLocalGetway.swift */,
+			);
+			path = EntitysGetway;
+			sourceTree = "<group>";
+		};
 		DECD3D9525383DC1004B7A45 = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +147,7 @@
 		DECD3D9F25383DC1004B7A45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DECD3D9E25383DC1004B7A45 /* MovieApp.app */,
+				DECD3D9E25383DC1004B7A45 /* Cornet Elevated.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				DECD3DE825385289004B7A45 /* MovieCell.swift */,
-				DE03216E253A3812001F0D96 /* hello.storyboard */,
 				DECD3E192538ED20004B7A45 /* MovieViewModel.swift */,
 			);
 			path = MovieCell;
@@ -311,6 +331,7 @@
 		DECD3DEC253862BA004B7A45 /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
+				DE032178253B61F6001F0D96 /* EntitysGetway */,
 				DECD3DED253862C5004B7A45 /* TMDB API */,
 				DECD3DEE253862DD004B7A45 /* Local Persistence  */,
 			);
@@ -321,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				DECD3E0325386C4E004B7A45 /* TMDBClient.swift */,
-				DECD3E0B253870B7004B7A45 /* MoviesService.swift */,
 			);
 			path = "TMDB API";
 			sourceTree = "<group>";
@@ -329,6 +349,9 @@
 		DECD3DEE253862DD004B7A45 /* Local Persistence  */ = {
 			isa = PBXGroup;
 			children = (
+				DE03217F253B6A25001F0D96 /* Storage.swift */,
+				DE032181253B6AB4001F0D96 /* DiskStorage.swift */,
+				DE032183253B6B0A001F0D96 /* CodableStorage.swift */,
 			);
 			path = "Local Persistence ";
 			sourceTree = "<group>";
@@ -437,7 +460,7 @@
 			);
 			name = MovieApp;
 			productName = MovieApp;
-			productReference = DECD3D9E25383DC1004B7A45 /* MovieApp.app */;
+			productReference = DECD3D9E25383DC1004B7A45 /* Cornet Elevated.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -480,7 +503,6 @@
 			files = (
 				DECD3DAE25383DC3004B7A45 /* LaunchScreen.storyboard in Resources */,
 				DECD3DAB25383DC3004B7A45 /* Assets.xcassets in Resources */,
-				DE03216F253A3812001F0D96 /* hello.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,9 +515,11 @@
 			files = (
 				DECD3DDA25385031004B7A45 /* BaseViewController.swift in Sources */,
 				DECD3E0425386C4E004B7A45 /* TMDBClient.swift in Sources */,
+				DE032184253B6B0A001F0D96 /* CodableStorage.swift in Sources */,
 				DECD3E182538EA76004B7A45 /* UIImageView + Caching.swift in Sources */,
 				DECD3DE0253850B8004B7A45 /* DiscoverPresenter.swift in Sources */,
 				DECD3E002538690B004B7A45 /* JSONParameterEncoding.swift in Sources */,
+				DE032177253B6039001F0D96 /* MoviesGateway.swift in Sources */,
 				DECD3DE925385289004B7A45 /* MovieCell.swift in Sources */,
 				DECD3E1325388443004B7A45 /* BaseServiceError.swift in Sources */,
 				DECD3DCF25384F2E004B7A45 /* Interactable.swift in Sources */,
@@ -504,6 +528,8 @@
 				DECD3DE4253850F0004B7A45 /* DiscoverWireframe.swift in Sources */,
 				DECD3DD325384F62004B7A45 /* Wireframeable.swift in Sources */,
 				DECD3DCD25384F06004B7A45 /* Viewable.swift in Sources */,
+				DE032182253B6AB4001F0D96 /* DiskStorage.swift in Sources */,
+				DE03217A253B629E001F0D96 /* SearchTermsGateway.swift in Sources */,
 				DECD3DEB253852F5004B7A45 /* CardView.swift in Sources */,
 				DECD3E222539F483004B7A45 /* SearchPresenter.swift in Sources */,
 				DECD3DD525384F8B004B7A45 /* BaseWireframe.swift in Sources */,
@@ -518,17 +544,19 @@
 				DE032173253B2E0C001F0D96 /* SearchHistoryCell.swift in Sources */,
 				DECD3DF725386705004B7A45 /* HTTPMethod.swift in Sources */,
 				DECD3DF325386692004B7A45 /* EndPointType.swift in Sources */,
+				DE032180253B6A25001F0D96 /* Storage.swift in Sources */,
 				DECD3DA225383DC1004B7A45 /* AppDelegate.swift in Sources */,
 				DECD3DFC25386819004B7A45 /* ParameterEncoding.swift in Sources */,
 				DECD3DC525384D86004B7A45 /* Movie.swift in Sources */,
 				DECD3DC02538448A004B7A45 /* DiscoverViewController.swift in Sources */,
 				DECD3E112538815A004B7A45 /* BaseService.swift in Sources */,
 				DECD3E1A2538ED20004B7A45 /* MovieViewModel.swift in Sources */,
-				DECD3E0C253870B7004B7A45 /* MoviesService.swift in Sources */,
+				DECD3E0C253870B7004B7A45 /* MoviesRemoteGatewayToTMDB.swift in Sources */,
 				DECD3DE725385126004B7A45 /* DiscoverVIPERContract.swift in Sources */,
 				DECD3DBA25383FC0004B7A45 /* RootViewController.swift in Sources */,
 				DECD3DA425383DC1004B7A45 /* SceneDelegate.swift in Sources */,
 				DECD3E242539F4BA004B7A45 /* SearchInteractor.swift in Sources */,
+				DE03217C253B630C001F0D96 /* SearchTermLocalGetway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,7 +699,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.madian.MovieApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cornet Elevated";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -688,7 +716,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.madian.MovieApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Cornet Elevated";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

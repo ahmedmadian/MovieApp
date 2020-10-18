@@ -8,10 +8,13 @@
 
 import Foundation
 
-class MoviesRemoteService: BaseService {
-
+class MoviesRemoteGatewayToTMDB: BaseService {
     
-    func getDiscoverMovies(page: Int, completionHandler: @escaping (Swift.Result<[Movie], Error>) -> Void) {
+}
+
+extension MoviesRemoteGatewayToTMDB: MoviesGateway {
+    
+    func getDiscoverMovies(page: Int, completionHandler: @escaping FetchMoviesEntityGatewayCompletionHandler) {
         let endPoint: TMDBClient.TMDBEndPoint = .discover(page: page)
         self.execute(endPoint: endPoint) { (result: Result<GenericResoponse<Movie>, Error>) in
             
@@ -25,7 +28,7 @@ class MoviesRemoteService: BaseService {
         }
     }
     
-    func searchforMovie(with searchTerm: String, page: Int, completionHandler: @escaping (Swift.Result<[Movie], Error>) -> Void) {
+    func searchforMovie(with searchTerm: String, page: Int, completionHandler: @escaping FetchMoviesEntityGatewayCompletionHandler) {
         let endPoint: TMDBClient.TMDBEndPoint = .search(searchTerm: searchTerm, page: page)
         self.execute(endPoint: endPoint) { (result: Result<GenericResoponse<Movie>, Error>) in
             
@@ -40,7 +43,6 @@ class MoviesRemoteService: BaseService {
     }
     
 }
-
 
 struct GenericResoponse<Model: Codable>: Codable {
     

@@ -17,19 +17,6 @@ enum Enviroment: String {
     // MARK: - Current Enviroment
     
     static let current: Enviroment = {
-       
-//        guard let value = Bundle.main.infoDictionary?["Configuration"] as? String else {
-//            fatalError("Can't found Configuration")
-//        }
-//
-//        guard let rawValue = value.split(separator: "/").last else {
-//            fatalError("Invalid Configuration")
-//        }
-//
-//        guard let enviroment = Enviroment(rawValue: "\(rawValue)") else {
-//            fatalError("Invalid Enviroment")
-//        }
-//
         return .staging
     }()
     

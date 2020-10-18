@@ -17,30 +17,55 @@ class SearchPresenter {
     private let _wireframe: SearchWireframe
     private var _items: [Movie]
     private var _searchTerms: [String]
+    private var _pageNumber = 1
+    var _currentSearchText = "" {
+        didSet {
+            if !self._searchTerms.contains(_currentSearchText) { self._searchTerms.insert(_currentSearchText, at: 0)}
+        }
+    }
     private var _viewMode: ViewMode = .search {
         didSet {
             self._view.setupViewFor(mode: self._viewMode)
         }
     }
-    private var _selectedSearchTerm: String = ""
     
     // MARK: - Life Cycle
     
-    init(view: SearchView, interactor: SearchInteraction, wireframe: SearchWireframe) {
+    init(view: SearchView,
+         interactor: SearchInteraction,
+         wireframe: SearchWireframe) {
+        
         self._view = view
         self._interactor = interactor
         self._wireframe = wireframe
         self._items = []
-        self._searchTerms = ["Mad", "Misssion", "Ali"]
+        self._searchTerms = []
     }
     
-    private func searchForMovies(with text: String) {
+    private func loadSearchHistory() {
+        self._interactor.getSearchTerms { (result) in
+            switch result {
+            case .success(let data):
+                self._searchTerms = data
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func saveSearchHistory() {
+        self._interactor.save(searchTerms: Array(self._searchTerms))
+    }
+    
+    private func searchMovie(with text: String) {
+        self._viewMode = .result
         self._view.showLoader()
-        self._interactor.searchForMovie(with: text, page: 1) { [unowned self] (result)in
+        self._interactor.searchForMovie(with: text, page: _pageNumber) { [unowned self] (result)in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let movies):
                     self._items = movies
+                    self._currentSearchText = text
                     self._view.updateSearchResult()
                 case.failure(let error):
                     self._wireframe.showErrorAlert(with: error.localizedDescription)
@@ -55,37 +80,44 @@ class SearchPresenter {
 // MARK: - View Inputs to Presnter
 
 extension SearchPresenter: SearchPresentation {
-    
-    func viewDidLoad() {
-        self._viewMode = .search
-    }
-    
+   
+    /// Navigation Bar Title
     var title: String {
         switch self._viewMode {
         case .search:
-            return "Search"
+            return "Search Movies"
         case .result:
-            return self._selectedSearchTerm == "" ? "Movies" : "Result of \'\(self._selectedSearchTerm)\'"
+            return "Movies"
         }
     }
     
-    func handleShowSearchButton() {
-        self._viewMode = .search
-    }
-    
+    /// View Mode
     var viewMode: ViewMode {
         return self._viewMode
     }
     
+    /// ViewController Life Cycle
+    func viewDidLoad() {
+        self._viewMode = .search
+        self.loadSearchHistory()
+    }
+    
+    func viewWillDisappear(animated: Bool) {
+        self.saveSearchHistory()
+    }
+    
+    /// Nvigation Bar Button
+    func handleShowSearchButton() {
+        self._viewMode = .search
+    }
+    
+    /// Search Bar
     func searchBarCancelButtonClicked() {
         self._viewMode = .result
     }
     
-    func searchBarSearchButtonClicked(with text: String?) {
-        guard let searchText = text else { return }
-        self._selectedSearchTerm = searchText
-        self._viewMode = .result
-        self.searchForMovies(with: searchText)
+    func searchBarSearchButtonClicked(with text: String) {
+        self.searchMovie(with: text)
     }
     
     var numberOfSections: Int {
@@ -101,6 +133,7 @@ extension SearchPresenter: SearchPresentation {
         }
     }
     
+    /// Cell Configurations
     func config(cell: MovieItemView, at indexPath: IndexPath) {
         let viewModel = MovieViewModel(movie: self._items[indexPath.row])
         cell.configView(with: viewModel)
@@ -110,11 +143,9 @@ extension SearchPresenter: SearchPresentation {
         searchCell.configView(with: self._searchTerms[indexPath.row])
     }
     
+    /// Cell Selection
     func didSelectRow(at indexPath: IndexPath) {
         if self._viewMode == .result { return }
-        self._selectedSearchTerm = self._searchTerms[indexPath.row]
-        self._viewMode = .result
-        self.searchForMovies(with: self._searchTerms[indexPath.row])
+        self.searchMovie(with: self._searchTerms[indexPath.row])
     }
-    
 }

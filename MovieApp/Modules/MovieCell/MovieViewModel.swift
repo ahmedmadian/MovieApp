@@ -17,6 +17,8 @@ class MovieViewModel {
     }
 }
 
+// MARK: MoviePresentable
+
 extension MovieViewModel: MoviePresentable {
     var name: String {
         return self._movie.title
@@ -29,7 +31,7 @@ extension MovieViewModel: MoviePresentable {
     }
     
     var releaseDate: String {
-        return self._movie.releaseDate
+        return self._movie.releaseDate ?? ""
     }
     
     var overView: String {

@@ -65,6 +65,11 @@ class SearchViewController: BaseViewController {
         self.presenter.viewDidLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.presenter.viewWillDisappear(animated: animated)
+    }
+    
     // MARK: - View Configurations -
     
     private func setupView() {
@@ -160,7 +165,8 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.presenter.searchBarSearchButtonClicked(with: searchBar.text)
+        guard let searchText = searchBar.text else { return }
+        self.presenter.searchBarSearchButtonClicked(with: searchText)
     }
     
 }
@@ -168,6 +174,7 @@ extension SearchViewController: UISearchBarDelegate {
 // MARK: - Search View Output -
 
 extension SearchViewController : SearchView {
+    
     func setupViewFor(mode: ViewMode) {
         switch mode {
         case .search:
@@ -195,4 +202,5 @@ extension SearchViewController : SearchView {
     func updateSearchResult() {
         self.tableView.reloadData()
     }
+       
 }

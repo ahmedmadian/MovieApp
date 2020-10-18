@@ -20,7 +20,7 @@ protocol SearchPresentation: Presentable {
     var title: String { get }
     func handleShowSearchButton()
     func searchBarCancelButtonClicked()
-    func searchBarSearchButtonClicked(with text: String?)
+    func searchBarSearchButtonClicked(with text: String)
     var numberOfSections: Int { get }
     func numberOrRows(in section: Int) -> Int
     func config(cell: MovieItemView, at indexPath: IndexPath)
@@ -30,6 +30,8 @@ protocol SearchPresentation: Presentable {
 
 protocol SearchInteraction: Interactable {
     func searchForMovie(with searchTerm: String, page: Int, _ completion: @escaping (Result<[Movie], Error>) -> Void)
+    func getSearchTerms(_ completion: @escaping FetchSearchTermsEntityGatewayCompletionHandler)
+    func save(searchTerms: [String])
 }
 
 protocol SearchWireframeInterface: Wireframeable {

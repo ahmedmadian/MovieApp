@@ -9,11 +9,6 @@
 import UIKit
 
 class RootViewController: UITabBarController {
-
-    struct Constants {
-        static let insetsBottom: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? -8 :  0
-        static let insetsTop: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 8 :  0
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +18,16 @@ class RootViewController: UITabBarController {
         self.tabBar.unselectedItemTintColor = .lightGray
         self.tabBar.isTranslucent = true
         
-        let a = DiscoverWireframe().viewController
-        a.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 0)
+        let mostRecentRoute = UINavigationController()
+        mostRecentRoute.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 0)
+        mostRecentRoute.setRootRoute(DiscoverWireframe())
+        
+        let searchRoute = UINavigationController()
+        searchRoute.tabBarItem =  UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        searchRoute.setRootRoute(SearchWireframe())
         
         
-
-        let b = UINavigationController(rootViewController: SearchWireframe().viewController)
-        b.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        
-        
-        
-        self.setViewControllers([a,b], animated: true)
+        self.setViewControllers([mostRecentRoute,searchRoute], animated: true)
         
     }
     

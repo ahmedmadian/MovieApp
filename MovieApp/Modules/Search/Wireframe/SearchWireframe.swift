@@ -16,9 +16,15 @@ class SearchWireframe: BaseWireframe {
         let moduleViewController = SearchViewController()
         super.init(viewController: moduleViewController)
         
-        let interactor = SearchInteractor(moviesService: MoviesRemoteService())
+        let moviesGetway = MoviesRemoteGatewayToTMDB()
+        let searchTermsGetway = SearchTermLocalGetway()
         
-        let presenter = SearchPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
+        let interactor = SearchInteractor(moviesService: moviesGetway,
+                                          searchTermsGateway: searchTermsGetway)
+        
+        let presenter = SearchPresenter(view: moduleViewController,
+                                        interactor: interactor,
+                                        wireframe: self)
         
         moduleViewController.presenter = presenter
     }

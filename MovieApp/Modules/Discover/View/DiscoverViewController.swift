@@ -30,8 +30,9 @@ class DiscoverViewController: BaseViewController {
     }()
     
     private lazy var footerView: UIView = {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.view.frame.height))
-        let spinner = UIActivityIndicatorView(style: .large)
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width , height: 40))
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.color = .red
         footerView.addSubview(spinner)
         spinner.pinToSuperview(forAtrributes: [.centerX, .centerY])
         spinner.startAnimating()
@@ -42,10 +43,10 @@ class DiscoverViewController: BaseViewController {
         super.viewDidLoad()
         self.setupView()
         self.presenter.viewDidLoad()
-        
     }
     
     private func setupView() {
+        self.navigationController?.navigationBar.isHidden = true
         self.setupViewLayout()
     }
     

@@ -10,9 +10,9 @@ import Foundation
 
 class DiscoverInteractor {
     
-    private let _moviesService: MoviesRemoteService
+    private let _moviesService: MoviesRemoteGatewayToTMDB
     
-    init(moviesService: MoviesRemoteService) {
+    init(moviesService: MoviesRemoteGatewayToTMDB) {
         self._moviesService = moviesService
     }
 }

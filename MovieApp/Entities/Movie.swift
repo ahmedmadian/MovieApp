@@ -21,7 +21,8 @@ struct Movie: Codable {
     let genreIDS: [Int]
     let title: String
     let voteAverage: Double
-    let overview, releaseDate: String
+    let overview: String
+    let releaseDate: String?
 
     enum CodingKeys: String, CodingKey {
         case popularity
@@ -38,11 +39,4 @@ struct Movie: Codable {
         case overview
         case releaseDate = "release_date"
     }
-}
-
-enum OriginalLanguage: String, Codable {
-    case ca = "ca"
-    case en = "en"
-    case es = "es"
-    case ko = "ko"
 }

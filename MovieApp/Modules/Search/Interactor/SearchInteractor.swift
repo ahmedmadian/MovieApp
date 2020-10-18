@@ -33,7 +33,7 @@ extension SearchInteractor: SearchInteraction {
     }
     
     func getSearchTerms(_ completion: @escaping FetchSearchTermsEntityGatewayCompletionHandler) {
-        self._searchTermsGateway.getAllSearchTerms { (result) in
+        self._searchTermsGateway.getSearchHistory { (result) in
             completion(result)
         }
     }

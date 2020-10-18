@@ -57,6 +57,7 @@ class DiscoverViewController: BaseViewController {
     
 }
 
+// MARK: - UITableViewDataSource -
 
 extension DiscoverViewController: UITableViewDataSource {
     
@@ -80,14 +81,20 @@ extension DiscoverViewController: UITableViewDataSource {
     
 }
 
+// MARK: - UITableViewDelegate -
+
 extension DiscoverViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let position = scrollView.contentOffset.y
-        if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - (scrollView.frame.size.height * 4) {
             self.presenter.didScrollToEnd()
         }
     }
 }
+
+// MARK: - DiscoverView -
 
 extension DiscoverViewController: DiscoverView {
     
@@ -102,7 +109,6 @@ extension DiscoverViewController: DiscoverView {
     func hideTableViewFooter() {
         self.tableView.tableFooterView = nil
     }
-    
     
 }
 

@@ -10,7 +10,7 @@ import UIKit
 
 class MovieCell: UITableViewCell {
     
-    // MARK: - Views
+    // MARK: - View Hierachy -
     
     private let containerView: UIView = {
         let view = UIView()
@@ -55,6 +55,8 @@ class MovieCell: UITableViewCell {
         return label
     }()
     
+    // MARK: - Life Cycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupViewLayout()
@@ -72,6 +74,8 @@ class MovieCell: UITableViewCell {
         self.thumbnailImageView.image = nil
     }
     
+    // MARK: - View Configurations -
+    
     private func setupViewLayout() {
         self.addSubview(containerView)
         self.containerView.pinToSuperview(forAtrributes: [.top, .leading], constant: 12)
@@ -87,20 +91,17 @@ class MovieCell: UITableViewCell {
         self.nameLabel.pinToSuperview(forAtrributes: [.top], constant: 8)
         self.nameLabel.pin(attribute: .leading, toView: self.thumbnailImageView, toAttribute: .trailing, constant: 8)
         self.nameLabel.pinToSuperview(forAtrributes: [.trailing], constant: -8)
-        //self.nameLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         
         self.containerView.addSubview(releaseDateLabel)
         self.releaseDateLabel.pin(attribute: .top, toView: self.nameLabel, toAttribute: .bottom, constant: 8)
         self.releaseDateLabel.pin(attribute: .leading, toView: self.thumbnailImageView, toAttribute: .trailing, constant: 8)
         self.releaseDateLabel.pinToSuperview(forAtrributes: [.trailing], constant: -8)
-//        self.releaseDateLabel.setContentHuggingPriority(.required, for: .vertical)
-        //self.nameLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         
         self.containerView.addSubview(overViewLabel)
-        self.overViewLabel.pin(attribute: .top, toView: self.releaseDateLabel, toAttribute: .bottom, constant: 12)
+        self.overViewLabel.pin(attribute: .top, toView: self.thumbnailImageView, toAttribute: .centerY, constant: -16)
+        self.overViewLabel.pin(attribute: .height, toView: self.thumbnailImageView, toAttribute: .height, multiplier: 0.5)
         self.overViewLabel.pin(attribute: .leading, toView: self.thumbnailImageView, toAttribute: .trailing, constant: 8)
         self.overViewLabel.pinToSuperview(forAtrributes: [.trailing], constant: -8)
-//        self.overViewLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
     }
     
     private func animateCell() {

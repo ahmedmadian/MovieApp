@@ -15,7 +15,7 @@ Clone the repository by executing the following command from the command line.
 ```bash
 git clone https://github.com/ahmedmadian/MovieApp.git
 ```
-### Step 2: Build and Run
+### Step 3: Build and Run
 
 ### Dependency Graph
 

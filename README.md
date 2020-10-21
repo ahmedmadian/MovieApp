@@ -17,6 +17,8 @@ git clone https://github.com/ahmedmadian/MovieApp.git
 ```
 ### Step 3: Build and Run
 
+![](MovieApp.gif) <br />
+
 ### Dependency Graph
 
 According to VIPER Architecture, every Modules have 5 main parts, The main parts of each module are:
